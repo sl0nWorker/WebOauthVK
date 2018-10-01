@@ -18,9 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class startPageServlet {
     private UserRepository userRepository;
 
     @GetMapping(path = "/home")
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public ModelAndView index(HttpServletRequest request) throws IOException {
         String remoteAddr = "";
         if (request != null) {
             remoteAddr = request.getHeader("X-FORWARDED-FOR");
